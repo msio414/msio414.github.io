@@ -12,7 +12,7 @@
             "url": "{{ .Site.BaseURL }}",
             "image": "{{ .Site.BaseURL }}img/me.png",
             "sameAs": [ {{ range .Site.Params.socials }}
-                "{{ .url }}", {{ end }}
+                "{{ .url | safeHTML }}", {{ end }}
             ],
             "jobTitle": "{{ .Site.Params.occupation }}",
             "worksFor": {
