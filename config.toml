@@ -1,37 +1,37 @@
-baseURL = 'https://msio.me'
-languageCode = 'en'
-title = 'PERSONAL PORTFOLIO'
+baseURL = "https://msio.me/"
+languageCode = "en"
+title = "PERSONAL PORTFOLIO"
 
 [params]
-    author = 'MUHAMMED'
-    names = ['Muhammed A. Senghore', 'Muhammed Senghore']
-    firstName = 'Muhammed A.'
-    lastName = 'Senghore'
-    email = 'nbytes808@gmail.com'
-    occupation = ['Student']
-    organization = ['Cisco Networking Academy']
-    skills = ['Linux', 'Git', 'Cybersecurity', 'Basic Electronics', 'Basic C & Python']
-    location = 'Istanbul, Turkey'
-    description = 'A showcase of my skills & work, including projects in C, Python & Cybersecurity'
+    author = "MUHAMMED"
+    names = ["Muhammed A. Senghore", "Muhammed Senghore"]
+    firstName = "Muhammed A."
+    lastName = "Senghore"
+    email = "nbytes808@gmail.com"
+    occupation = ["Student"]
+    organization = ["Cisco Networking Academy"]
+    skills = ["Linux", "Git", "Cybersecurity", "Basic Electronics", "Basic C & Python"]
+    location = "Istanbul, Turkey"
+    description = "A showcase of my skills & work, including projects in C, Python & Cybersecurity"
     socials = [
-        { name = 'GitHub', url = 'https://github.com/msio808', icon = 'github' },
-        { name = 'LinkedIn', url = 'https://linkedin.com/in/msio808', icon = 'linkedin' },
-        { name = 'Instagram', url = 'https://instagram.com/msio808', icon = 'instagram' },
-        { name = 'Bluesky', url = 'https://bsky.app/profile/msio.me', icon = 'bluesky' },
-        { name = 'HackerRank', url = 'https://hackerrank.com/profile/mrmasio/', icon = 'hackerrank' },
-        { name = 'LeetCode', url = 'https://leetcode.com/u/msio808/', icon = 'leetcode' },
-        { name = 'TryHackMe', url = 'https://tryhackme.com/p/msio', icon = 'tryhackme' },
-        { name = 'LetsDefend', url = 'https://app.letsdefend.io/user/msio', icon = 'letsdefend' },
-        { name = 'YouTube', url = 'https://youtube.com/@msio808', icon = 'youtube' },
-        { name = 'My Blog', url = 'https://blog.msio.me/', icon = 'rss' }
+        { name = "GitHub", url = "https://github.com/msio808", icon = "github" },
+        { name = "LinkedIn", url = "https://linkedin.com/in/msio808", icon = "linkedin" },
+        { name = "Instagram", url = "https://instagram.com/msio808", icon = "instagram" },
+        { name = "Bluesky", url = "https://bsky.app/profile/msio.me", icon = "bluesky" },
+        { name = "HackerRank", url = "https://hackerrank.com/profile/mrmasio/", icon = "hackerrank" },
+        { name = "LeetCode", url = "https://leetcode.com/u/msio808/", icon = "leetcode" },
+        { name = "TryHackMe", url = "https://tryhackme.com/p/msio", icon = "tryhackme" },
+        { name = "LetsDefend", url = "https://app.letsdefend.io/user/msio", icon = "letsdefend" },
+        { name = "YouTube", url = "https://youtube.com/@msio808", icon = "youtube" },
+        { name = "My Blog", url = "https://blog.msio.me/", icon = "rss" }
 ]
 
 [params.PortfolioSummary]
-    greetings = 'Howdy!'
+    greetings = "Howdy!"
     summary = [
-        'I’m Muhammed, & I’m a student living in Istanbul, Turkey. I’m a tech enthusiast with a knack for cybersecurity.',
-        'I love solving challenges on platforms like <b><a href="https://tryhackme.com/p/msio/" target="_blank">TryHackMe</a>,</b> building up my skills, and staying on top of the latest industry trends.',
-        'I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018.'
+        "I’m Muhammed, & I’m a student living in Istanbul, Turkey. I’m a tech enthusiast with a knack for cybersecurity.",
+        "I love solving challenges on platforms like <b><a href=\"https://tryhackme.com/p/msio/\" target=\"_blank\">TryHackMe</a>,</b> building up my skills, and staying on top of the latest industry trends.",
+        "I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018."
     ]
 
 [taxonomies]
