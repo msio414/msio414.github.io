@@ -32,7 +32,7 @@
     <meta name="author" content="{{ .Site.Params.author }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <meta name="description" content="{{ .Site.Params.description }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}img/my-logo-blue-black.png?">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "img/my-logo-blue-black.png?" | relURL }}">
     <meta name="robots" content="index, follow">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -42,18 +42,18 @@
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:image" content="{{ .Site.BaseURL }}img/profile.jpg?">
+    <meta property="og:image" content="{{ "img/me.png?" | relURL }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
 
     <meta name="keywords" content="{{ delimit .Site.Params.skills ", "  }}">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css">
+    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
 
 </head>
 <body>
     <header>
-        <img src="{{ .Site.BaseURL }}img/me.png" alt="Avatar" class="profile">
+        <img src="{{ "img/me.png" | relURL }}" alt="Avatar" class="profile">
         <h1>
-            <img src="{{ .Site.BaseURL }}img/my-logo-blue-black.png" alt="brand" class="logo">
+            <img src="{{ "img/my-logo-blue-black.png" | relURL }}" alt="brand" class="logo">
             <span class="name"> {{ .Site.Params.firstName }} <b>{{ .Site.Params.lastName }}</b></span>
         </h1>
     </header>
