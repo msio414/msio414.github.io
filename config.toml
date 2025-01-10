@@ -24,14 +24,13 @@ title = "PERSONAL PORTFOLIO"
         { name = "LetsDefend", url = "https://app.letsdefend.io/user/msio", icon = "letsdefend" },
         { name = "YouTube", url = "https://youtube.com/@msio808", icon = "youtube" },
         { name = "My Blog", url = "https://blog.msio.me/", icon = "rss" }
-]
-
-[params.PortfolioSummary]
-    greetings = "Howdy!"
-    summary = [
-        "I’m Muhammed, & I’m a student living in Istanbul, Turkey. I’m a tech enthusiast with a knack for cybersecurity.",
-        "I love solving challenges on platforms like <b><a href=\"https://tryhackme.com/p/msio/\" target=\"_blank\">TryHackMe</a>,</b> building up my skills, and staying on top of the latest industry trends.",
-        "I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018."
     ]
+    [params.PortfolioSummary]
+        greetings = "Howdy!"
+        summary = [
+            "I’m Muhammed, & I’m a student living in Istanbul, Turkey. I’m a tech enthusiast with a knack for cybersecurity.",
+            "I love solving challenges on platforms like <b><a href=\"https://tryhackme.com/p/msio/\" target=\"_blank\">TryHackMe</a>,</b> building up my skills, and staying on top of the latest industry trends.",
+            "I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018."
+        ]
 
 [taxonomies]
