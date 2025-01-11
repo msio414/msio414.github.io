@@ -50,10 +50,13 @@
 
     <meta http-equiv="Content-Security-Policy" content="object-src 'none'; script-src 'self'; upgrade-insecure-requests;">
     <meta name="keywords" content="{{ delimit .Site.Params.skills ", "  }}">
-
+    
     <link rel="preload" href="{{ "css/styles.css" | relURL }}" as="style"/>
     <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}" data-n-g=""/>
     <noscript data-n-css=""></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
