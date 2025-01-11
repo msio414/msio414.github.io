@@ -8,31 +8,34 @@
         {
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": [ {{ range .Site.Params.names }} "{{ . }}", {{ end }}],
-            "url": "{{ .Site.BaseURL }}",
-            "image": "{{ .Site.BaseURL }}img/me.png",
-            "sameAs": [ {{ range .Site.Params.socials }}
-                "{{ .url | safeHTML }}", {{ end }}
+            "name": ["Muhammed A. Senghore", "Muhammed Senghore"],
+            "url": "/",
+            "image": "https://msio.me/assets/img/me.avif",
+            "sameAs": [
+                "https://blog.msio.me/",
+                "https://www.linkedin.com/in/msio808",
+                "https://github.com/msio808",
+                "https://tryhackme.com/p/msio",
+                "https://instagram.com/msio808",
+                "https://bsky.app/profile/msio.me"
             ],
-            "jobTitle": "{{ .Site.Params.occupation }}",
+            "jobTitle": "Student",
             "worksFor": {
-                "@type": "EducationalOrganization",
-                "name": [
-                    {{ delimit .Site.Params.organization ", "  }}
-                ]
+              "@type": "EducationalOrganization",
+              "name": "Cisco Networking Academy"
             },
-            "knowsAbout": [ 
-                {{ range .Site.Params.skills }} "{{ . }}", {{ end }} 
+            "knowsAbout": [
+                "Linux", "Git", "Cybersecurity", "Basic Electronics", "Basic C & Python"
             ],
-            "description": "{{ .Site.Params.description }}",
-            "email": "mailto:{{ .Site.Params.email }}"
+            "description": "A showcase of my skill & work, including projects in C, Python, & Cybersecurity",
+            "email": "mailto:nbyte808@gmail.com",
         }
     </script>
     <base href="{{ .Site.BaseURL }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <meta name="description" content="{{ .Site.Params.description }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ "img/my-logo-blue-black.png?" | relURL }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "img/my-Logo-MS-blue-NO-Frame.avif?" | relURL }}">
     <meta name="robots" content="index, follow">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -42,18 +45,18 @@
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:image" content="{{ "img/me.png?" | relURL }}">
+    <meta property="og:image" content="{{ "img/me.avif?" | relURL }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="keywords" content="{{ delimit .Site.Params.skills ", "  }}">
-    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
-
+    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}" media="print" onload="this.media='all';">
 </head>
 <body>
     <header>
-        <img src="{{ "img/me.png" | relURL }}" alt="Avatar" class="profile">
+        <img src="{{ "img/me.avif" | relURL }}" alt="Avatar" class="profile" width="112" height="112" loading="lazy">
         <h1>
-            <img src="{{ "img/my-logo-blue-black.png" | relURL }}" alt="brand" class="logo">
+            <img src="{{ "img/my-logo-blue-black.avif" | relURL }}" alt="brand" class="logo" width="50" height="50" loading="lazy">
             <span class="name"> {{ .Site.Params.firstName }} <b>{{ .Site.Params.lastName }}</b></span>
         </h1>
     </header>
@@ -69,7 +72,7 @@
             <div>
                 <a href="{{ .Site.BaseURL }}resources/CV___Muhammed.pdf" class="resume-button" target="_blank">
                     <b>See my resume</b>
-                    <svg width="21.24" height="21.24" viewBox="auto">
+                    <svg width="21.24" height="21.24" viewBox="0 0 21.24 21.24">
                         <use xlink:href="{{ .Site.BaseURL }}icon/sprite.svg#readme" alt="my resume"></use>
                     </svg>
                 </a>
@@ -82,7 +85,7 @@
         <div>
             <p>Follow my socials</p>
             {{ range .Site.Params.socials }}
-            <a href="{{ .url }}" target="_blank"><svg width="21.24" height="21.24" viewBox="auto"><use xlink:href="{{ .Site.BaseURL }}icon/sprite.svg#{{ .icon }}" alt="{{ .name }}"></use></svg></a> {{ end }}
+            <a href="{{ .url }}" target="_blank"><svg width="21.24" height="21.24" viewBox="0 0 21.24 21.24"><use xlink:href="{{ .Site.BaseURL }}icon/sprite.svg#{{ .icon }}" alt="Follow me on {{ .name }}"></use></svg></a> {{ end }}
         </div>
     </footer>
 </body>

@@ -20,8 +20,6 @@ header {
 }
 
 header .profile {
-    width: 10rem;
-    height: auto;
     border-radius: 100%;
     color: transparent;
     margin-left: auto;
@@ -29,8 +27,6 @@ header .profile {
 }
 
 header h1 .logo {
-    height: 3.5rem;
-    width: auto;
     vertical-align: middle;
 }
 
@@ -101,7 +97,7 @@ footer a {
         padding: .5rem;
     }
     header img {
-        width: 7rem;
+        width: 4rem;
     }
     header h1 {
         font-size: 1.75rem;
