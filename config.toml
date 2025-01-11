@@ -28,5 +28,6 @@ title = 'PERSONAL PORTFOLIO'
             'I love solving challenges on platforms like <b><a href="https://tryhackme.com/p/msio/" target="_blank">TryHackMe</a>,</b> building up my skills, and staying on top of the latest industry trends.',
             'I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018.'
         ]
-
 [taxonomies]
+
+enableFingerprinting = true

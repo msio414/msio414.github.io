@@ -10,7 +10,7 @@
             "@type": "Person",
             "name": ["Muhammed A. Senghore", "Muhammed Senghore"],
             "url": "/",
-            "image": "https://msio.me/assets/img/me.avif",
+            "image": "https://msio.me/assets/img/me.webp",
             "sameAs": [
                 "https://blog.msio.me/",
                 "https://www.linkedin.com/in/msio808",
@@ -35,7 +35,7 @@
     <meta name="author" content="{{ .Site.Params.author }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <meta name="description" content="{{ .Site.Params.description }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ "img/my-Logo-MS-blue-NO-Frame.avif?" | relURL }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "img/my-logo-blue-black.webp?" | relURL }}">
     <meta name="robots" content="index, follow">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -45,18 +45,23 @@
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:image" content="{{ "img/me.avif?" | relURL }}">
+    <meta property="og:image" content="{{ "img/my-logo-blue-black.webp?" | relURL }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
 
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; script-src 'self'; require-trusted-types-for 'script'; upgrade-insecure-requests;">
+
     <meta name="keywords" content="{{ delimit .Site.Params.skills ", "  }}">
     <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}" media="print" onload="this.media='all';">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Srisakdi:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Srisakdi:wght@400;700&display=swap">
+    </noscript>
 </head>
 <body>
     <header>
-        <img src="{{ "img/me.avif" | relURL }}" alt="Avatar" class="profile" width="112" height="112" loading="lazy">
+        <img src="{{ "img/me.webp" | relURL }}" alt="Avatar" class="profile" width="100" height="100" loading="lazy">
         <h1>
-            <img src="{{ "img/my-logo-blue-black.avif" | relURL }}" alt="brand" class="logo" width="50" height="50" loading="lazy">
+            <img src="{{ "img/my-logo-blue-black.webp" | relURL }}" alt="brand" class="logo" width="75" height="75" loading="lazy">
             <span class="name"> {{ .Site.Params.firstName }} <b>{{ .Site.Params.lastName }}</b></span>
         </h1>
     </header>
@@ -85,7 +90,7 @@
         <div>
             <p>Follow my socials</p>
             {{ range .Site.Params.socials }}
-            <a href="{{ .url }}" target="_blank"><svg width="21.24" height="21.24" viewBox="0 0 21.24 21.24"><use xlink:href="{{ .Site.BaseURL }}icon/sprite.svg#{{ .icon }}" alt="Follow me on {{ .name }}"></use></svg></a> {{ end }}
+            <a href="{{ .url }}" target="_blank"><svg width="21.24" height="21.24" viewBox="0 0 21.24 21.24"><use xlink:href="{{ .Site.BaseURL }}icon/sprite.svg#{{ .icon }}" aria-label="Follow me on {{ .name }}" alt="{{ .name }} icon"></use></svg></a> {{ end }}
         </div>
     </footer>
 </body>
