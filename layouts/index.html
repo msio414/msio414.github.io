@@ -48,14 +48,12 @@
     <meta property="og:image" content="{{ "img/my-logo-blue-black.webp?" | relURL }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; script-src 'self'; require-trusted-types-for 'script'; upgrade-insecure-requests;">
-
+    <meta http-equiv="Content-Security-Policy" content="object-src 'none'; script-src 'self'; upgrade-insecure-requests;">
     <meta name="keywords" content="{{ delimit .Site.Params.skills ", "  }}">
-    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}" media="print" onload="this.media='all';">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Srisakdi:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Srisakdi:wght@400;700&display=swap">
-    </noscript>
+
+    <link rel="preload" href="{{ "css/styles.css" | relURL }}" as="style"/>
+    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}" data-n-g=""/>
+    <noscript data-n-css=""></noscript>
 </head>
 <body>
     <header>

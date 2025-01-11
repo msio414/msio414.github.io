@@ -1,8 +1,4 @@
-@font-face {
-    font-family: 'Jura';
-    src: url('/fonts/Jura-Regular.woff2') format('woff2');
-    font-display: swap;
-}  
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
 body {
     max-width: 42rem;
     margin-left: auto;
@@ -38,7 +34,6 @@ header h1 .name {
     margin: 0;
     font-weight: 600;
     font-size: 2.25rem;
-    font-weight: normal;
     line-height: 2.5rem;
     font-family: "Jura", sans-serif;
 }
