@@ -1,0 +1,50 @@
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      {{- with .Site.Params -}}
+      "name": "{{ printf "%s %s" .FirstName .LastName -}}",
+      {{- end -}}
+      "url": "{{- printf "%s" (.Site.BaseURL | safeJS) -}}",
+      "image": "{{- printf "img/avatar.png" -}}",
+      {{- with .Site.Params.SiteDescription -}}
+      "description": "{{- printf "%s" ( . | safeJS) -}}",
+      {{ end }}
+      {{ with .Site.Params }}
+      {{- if (and .Jobtitle .Organization) -}}
+      "jobTitle": "{{- printf "%s" (.Jobtitle | safeJS) -}}",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "{{ printf "%s" (.Organization | safeJS) }}"
+      },
+      {{- end -}}
+      {{- if (and .Education .Institution) -}}
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name":  "{{ printf "%s" (.Institution | safeJS) -}}",
+            "degree": "{{ printf "%s" (.Education | safeJS) -}}"
+        },
+      {{- end -}}
+      "sameAs": [
+        {{- $len := len .Socials -}}
+        {{- range $key, $social := .Socials -}}
+            {{- printf "\"%s\"" $social | safeJS -}}
+            {{- $len = sub $len 1 -}}
+            {{- if gt $len 0 -}}
+              {{- printf "," | safeJS -}}
+            {{- end -}}
+        {{- end -}}
+      ],
+      "knowsAbout": [
+        {{- $len := len .Skills -}}
+        {{- range .Skills -}}
+            {{- printf "\"%s\"" . | safeJS -}}
+            {{- $len = sub $len 1 -}}
+            {{- if gt $len 0 -}}
+              {{- printf ", " | safeJS -}}
+            {{- end -}}
+        {{- end -}}
+      ]
+      {{ end }}
+  }
+</script>

@@ -1,0 +1,52 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' https://*.googletagmanager.com 'nonce-{{- .Scratch.Get "nonce" -}}';
+    style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+    img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com data:;
+    connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+    base-uri 'self'; media-src 'none'; frame-src 'none'; child-src 'none'; object-src 'none'; form-action 'self'; manifest-src 'self'; upgrade-insecure-requests;">
+
+    {{- with .Site.Params -}}
+        <meta name="author" content="@{{- .FirstName -}}">
+        <meta name="description" content="{{- .SiteDescription -}}">
+        <meta name="keywords" content="{{- delimit .Skills ", "  -}}">
+    {{- end -}}
+
+    <meta name="robots" content="index, follow">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>{{- .Scratch.Get "SiteTitle" -}}</title>
+    <base href="{{- .Site.BaseURL -}}" target="_blank">
+
+    <!-- Schema.org -->
+    {{ partial "meta/schema.html" . }}
+    {{ partial "meta/opengraph.html" . }}
+    {{ partial "meta/twittercard.html" . }}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicons -->
+    <meta name="msapplication-TileColor" content="#ECEFF4">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2E3440">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ECEFF4">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{- "img/icons/favicon-32x32.png" | relURL -}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{- "img/icons/apple-icon-180x180.png" | relURL -}}">
+    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="{{- "img/icons/favicon.ico" | relURL -}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{- "img/icons/android-icon-192x192.png" | relURL -}}">
+    <meta name="msapplication-TileImage" content="{{- "img/icons/ms-icon-144x144.png" | relURL -}}">
+
+    <!-- Google Analytics -->
+    {{ partial "meta/analytics.html" . }}
+    <link rel="stylesheet" href="{{- "css/styles.css" | relURL -}}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>

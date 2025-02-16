@@ -1,0 +1,19 @@
+<section class="summary">
+    {{- with .Site.Params.Profile }}
+        <h2>{{ .Greetings }}</h2>
+        {{- range .Summary }}
+            <p itemprop="description">{{ . | markdownify }}</p>
+        {{- end }}
+
+        {{- if (fileExists "static/resources/resume.pdf") }}
+            <div class="resume-container">
+                <a itemprop="url" class="resume-button" href="{{- "resources/resume.pdf" | relURL -}}">
+                    See My Resume <i class="fas fa-file-pdf"></i></a>
+            </div>
+        {{- end }}
+
+        {{- with .Email }}
+            <p itemprop="email">Contact me at <a href="mailto:{{ . }}">{{ . }}</a></p>
+        {{- end }}
+    {{ end }}
+</section>

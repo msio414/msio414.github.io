@@ -1,0 +1,26 @@
+{{- $nonce := .Scratch.Get "nonce" -}}
+{{- $respectDNT := site.Config.Privacy.GoogleAnalytics.RespectDoNotTrack -}}
+<!-- SOURCE: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/google_analytics.html -->
+{{- with .Site.Params.googleAnalytics.ID }}
+    {{- if strings.HasPrefix (lower .) "ua-" }}
+        {{- warnf "Google Analytics 4 (GA4) replaced Google Universal Analytics (UA) effective 1 July 2023.\n" }}
+        {{- warnf "See https://support.google.com/analytics/answer/11583528.\n" }}
+        {{- warnf "Create GA4 property & data stream, then replace the Google Analytics ID in the config.toml file.\n" }}
+    {{- else }}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}" nonce="{{- $nonce -}}"></script>
+        <script nonce="{{- $nonce -}}">
+            var doNotTrack = false;
+            if ({{- $respectDNT -}}) {
+                var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+                var doNotTrack = (dnt == "1" || dnt == "yes");
+            }
+            if (!doNotTrack) {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', "{{ . }}");
+            }
+        </script>
+    {{ end }}
+{{- end }}

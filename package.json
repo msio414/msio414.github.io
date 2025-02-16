@@ -1,0 +1,19 @@
+{
+    "name": "uniport-h",
+    "version": "1.0.0",
+    "description": "A simple, lightweight & customizable, HUGO portfolio theme.",
+    "scripts": {
+        "postinstall": "node icons.min.js",
+        "favicons": "node icons.min.js",
+        "preview": "hugo server",
+        "build": "hugo"
+    },
+    "author": { "name": "Muhammed A.", "url": "https://msio.me/" },
+    "license": "CC BY-NC-SA 4.0",
+    "homepage": "https://github.com/msio808/uniport-h.git",
+    "dependencies": { "sharp": "^0.33.5" },
+    "repository": { "type": "git", "url": "git+https://github.com/msio808/uniport-h.git" },
+    "bugs": { "url": "https://github.com/msio808/uniport-h/issues" },
+    "keywords": [ "clean", "starter", "onepage", "about me", "personal", "portfolio" ],
+    "contributors": [ { "name": "Muhammed A.", "url": "https://msio.me/" } ]
+}

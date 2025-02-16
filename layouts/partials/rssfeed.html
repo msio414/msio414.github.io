@@ -1,0 +1,20 @@
+{{- with .Site.Params.rssFeed.Url }}
+  <section itemscope itemtype="https://schema.org/Blog" class="rss-feed">
+    <h2>Recent Blog Posts</h2>
+    <ul>
+      {{- $rssURL := printf "https://api.rss2json.com/v1/api.json?rss_url=%s" . -}}
+      {{- $feed := resources.GetRemote $rssURL | transform.Unmarshal -}}
+      {{- if $feed.items -}}
+        {{- range first 3 $feed.items }}
+          <li itemscope itemtype="https://schema.org/BlogPosting">
+            <a itemprop="url" href="{{ .link }}">
+              <span itemprop="headline">{{ .title | truncate 608 }}</span></a>
+            <span itemprop="datePublished" content="{{ .pubDate }}">{{ .pubDate | dateFormat "Jan, 2006" }}</span>
+          </li>
+        {{- end }}
+      {{- else }}
+        <li>No recent posts available.</li>
+      {{- end }}
+    </ul>
+  </section>
+{{- end }}

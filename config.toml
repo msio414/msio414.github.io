@@ -1,33 +1,55 @@
-baseURL = '/'
-languageCode = 'en'
-title = 'PERSONAL PORTFOLIO'
+baseURL = "https://msio.me"
+languageCode = "en-us"
+title = "PORTFOLIO SITE"
 
 [params]
-    author = 'MUHAMMED'
-    firstName = 'Muhammed A.'
-    lastName = 'Senghore'
-    email = 'nbytes808@gmail.com'
-    skills = ['Linux', 'Git', 'Cybersecurity', 'Basic Electronics', 'Basic C & Python']
-    description = 'A showcase of my skills & work, including projects in C, Python & Cybersecurity'
-    socials = [
-        { name = 'GitHub', url = 'https://github.com/msio808', icon = 'github' },
-        { name = 'LinkedIn', url = 'https://linkedin.com/in/msio808', icon = 'linkedin' },
-        { name = 'Instagram', url = 'https://instagram.com/msio808', icon = 'instagram' },
-        { name = 'Bluesky', url = 'https://bsky.app/profile/msio.me', icon = 'bluesky' },
-        { name = 'HackerRank', url = 'https://hackerrank.com/profile/mrmasio/', icon = 'hackerrank' },
-        { name = 'LeetCode', url = 'https://leetcode.com/u/msio808/', icon = 'leetcode' },
-        { name = 'TryHackMe', url = 'https://tryhackme.com/p/msio', icon = 'tryhackme' },
-        { name = 'LetsDefend', url = 'https://app.letsdefend.io/user/msio', icon = 'letsdefend' },
-        { name = 'YouTube', url = 'https://youtube.com/@msio808', icon = 'youtube' },
-        { name = 'My Blog', url = 'https://blog.msio.me/', icon = 'rss' }
-    ]
-    [params.PortfolioSummary]
-        greetings = 'Howdy!'
-        summary = [
-            'I’m Muhammed, & I’m a student living in Istanbul, Turkey. I’m a tech enthusiast with a knack for cybersecurity.',
-            'I love solving challenges on platforms like <b><a href="https://tryhackme.com/p/msio/" target="_blank">TryHackMe</a>,</b> building up my skills, and staying on top of the latest industry trends.',
-            'I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018.'
-        ]
-[taxonomies]
+    defaultTitle = false
 
+    FirstName = 'Muhammed A.'
+    LastName = 'Senghore'
+    skills = ['Linux', 'Git', 'Cybersecurity', 'Basic Electronics', 'Basic C & Python', 'Basic HTML, CSS, & JS']
+    SiteDescription = 'A showcase of my skills & work, including projects in C, Python & Cybersecurity'
+
+    JobTitle = "Student"
+    Organization = "Freelance / Self-employed"
+
+    Education = "S.O.S Hermann Gmeiner Technical Senior Secondary School"
+    Institution = "High School Diploma"
+
+[params.Profile]
+    Greetings = "Howdy!"
+    summary = [
+        'I’m Muhammed, & I’m a student living in Istanbul, Turkey. I’m a tech enthusiast with a knack for cybersecurity.',
+        'I love solving challenges on platforms like [TryHackMe](https://tryhackme.com/p/msio/), building up my skills, and staying on top of the latest industry trends.',
+        'I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018.'
+    ]
+    Email = "nbytes808@gmail.com"
+
+[params.rssFeed]
+    Url = "https://msio.substack.com/feed.xml"
+
+[params.Socials]
+    GitHub = "https://github.com/msio808"
+    LinkedIn = "https://linkedin.com/in/msio808"
+    Instagram = "https://instagram.com/msio808"
+    BlueSky = "https://bsky.app/profile/msio.me"
+    YouTube = "https://youtube.com/@synercodex"
+    rss = "https://msio.substack.com"
+    HackerRank = "https://hackerrank.com/profile/mrmasio/"
+
+[params.Footer]
+    ccName = "Muhammed A"
+
+[params.googleAnalytics]
+    Id = "G-CL14LX3KFN"
+
+
+
+# Do not edit
+[outputs]
+    home = ["HTML", "RSS"]
+[minify]
+    minifyOutput = true
+enableRobotsTXT = true
 enableFingerprinting = true
+[taxonomies]
