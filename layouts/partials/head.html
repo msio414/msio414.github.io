@@ -31,6 +31,9 @@
     {{ partial "meta/opengraph.html" . }}
     {{ partial "meta/twittercard.html" . }}
 
+    <link rel="preload" href="{{- "css/styles.css" | absURL -}}" as="style">
+    <link rel="stylesheet" href="{{- "css/styles.css" | absURL -}}"/>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -46,7 +49,6 @@
 
     <!-- Google Analytics -->
     {{ partial "meta/analytics.html" . }}
-    <link rel="stylesheet" href="{{- "css/styles.css" | relURL -}}"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Nunito:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
