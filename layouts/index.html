@@ -7,7 +7,7 @@
 {{ end }}
 
 
-{{- $requiredFiles := slice "static/img/avatar.png" "static/img/brand.png" -}}
+{{- $requiredFiles := slice "static/img/avatar.JPG" "static/img/brand.png" -}}
 {{- range $requiredFiles -}}
     {{- if not (os.FileExists .) -}}
         {{- errorf "\n\n\t ERROR: Missing file: '%s'\n\t Fix: Add it to the 'static/img' directory\n\n" . -}}
