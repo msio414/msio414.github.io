@@ -43,7 +43,7 @@ html, body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 body {
     flex: 1;
@@ -235,16 +235,10 @@ footer {
 #theme-toggle:hover #theme-icon {
     color: var(--link-color);
     transform: scale(1);
-    /* filter: brightness(0.9); */
 }
 .credits {
     font-size: clamp(0.5rem, 1.5vw, 0.625rem);
 }
 .copyrights {
     font-size: clamp(0.675rem, 2.1vw, 0.875rem);
-}
-@media (prefers-reduced-motion: reduce) {
-    #theme-icon, #social-icon {
-        transition: none;
-    }
 }
