@@ -1,0 +1,253 @@
+/*  //////////////////////////////////////////////////
+    //  AUTHORS:                                    //
+    //      - Muhammed A.                           //
+    //  DESCRIPTION:                                //
+    //      - Contains CSS Variables & Layout       //
+    //      - Typography, & Component Styling.      //
+    //////////////////////////////////////////////////  */
+/*Nordtheme color palettes [MIT License]. ©️2016-present Sven Greb <development@svengreb.de> [\n] https://www.nordtheme.com; https://github.com/nordtheme/nord.git*/
+:root{--nord0:#2e3440;--nord1:#3b4252;--nord2:#434c5e;--nord3:#4c566a;--nord4:#d8dee9;--nord5:#e5e9f0;--nord6:#eceff4;--nord9:#81a1c1;--nord10:#5e81ac;--nord11:#bf616a;}
+
+/* @section: Global color & UI theme Variables for light & dark mode. */
+:root {
+    --text-color: var(--nord0);
+    --icon-color: var(--nord0);
+    --link-color: var(--nord10);
+    --background-color: var(--nord6);
+    --button-shadow: rgba(0, 0, 0, 0.5);
+    --button-shadow-hover: var(--nord10);
+    --border-bottom-color: var(--nord1);
+    --border-color: rgba(0, 0, 0, 0.05);
+    --toggle-thumb-color: var(--nord1);
+    --toggle-background-color: #e3e3e3;
+
+    --form-text-color: var(--nord6);
+    --form-background: var(--nord1);
+    --form-button-background: var(--nord9);
+}
+[data-theme="dark"] {
+    --text-color: var(--nord6);
+    --icon-color: var(--nord6);
+    --link-color: var(--nord11);
+    --background-color: var(--nord0);
+
+    --button-shadow: var(--nord3);
+    --button-shadow-hover: var(--nord11);
+    --border-bottom-color: var(--nord1);
+    --border-color: rgba(255, 255, 255, 0.05);
+
+    --toggle-thumb-color: var(--nord4);
+    --toggle-background-color: #383E4A;
+
+    --form-text-color: var(--nord0);
+    --form-background: var(--nord4);
+    --form-button-background: var(--nord11);
+}
+
+/* @section: Sets up the overall Page Layout, width, height, & flexbox alignment. */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+body {
+    flex: 1;
+    max-width: 42rem;
+    color: var(--text-color);
+    font-size: clamp(.875rem, 2.7vw, 1.125rem);
+    background-color: var(--background-color);
+    font-family: "Nunito", sans-serif;
+    text-align: justify;
+    text-justify: distribute;
+}
+
+/* @section Header Styling */
+header {
+    padding: 1rem;
+    margin: 0.8rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin: -.5rem;
+}
+header h1 > * {
+    margin: .5rem auto;
+}
+section { margin-bottom: 5vw; }
+section:last-child { margin-bottom: 0; }
+
+/* @section Typography & Links Styling */
+h2 {
+    margin-bottom: 0.625rem;
+    font-size: clamp(1rem, 3.6vw, 1.5rem);
+}
+
+a, em {
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    color: var(--link-color);
+}
+a:hover { text-decoration: underline; text-underline-position: under; }
+
+/* @section Avatar/brand Styling */
+.avatar {
+    padding: .625rem;
+    object-fit: cover;
+    border-radius: 100%;
+    background-color: var(--nord6);
+    width: clamp(6rem, 25vw, 10.5rem);
+    height: clamp(6rem, 25vw, 10.5rem);
+}
+
+.logo {
+    object-fit: cover;
+    width: clamp(1.5rem, 6vw, 2.5rem);
+    height: clamp(1.5rem, 6vw, 2.5rem);
+}
+
+/* @section Profile Summary Typography Styling */
+.name {
+    font-weight: normal;
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    font-family: "Cormorant Upright", serif;
+}
+
+main {
+    flex: 1;
+    margin: 0 auto;
+    padding: 0 .75rem .75rem;
+    border-radius: 8px;
+    background-color: inherit;
+}
+.summary p {
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+}
+
+/* @section Resume Button Styling */
+.resume-container {
+    margin: 2rem auto;
+    text-align: center;
+}
+.resume-button {
+    gap: 0.5rem;
+    color: inherit;
+    padding: .5rem 1rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    border-bottom: .625rem none;
+    font-family: "Cormorant Upright", serif;
+    box-shadow: 0 4px 2px -2px var(--button-shadow);
+}
+.resume-button i {
+    fill: var(--icon-color);
+}
+.resume-button:hover {
+    transform: scale(1.0125);
+    color: var(--link-color);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 2px -2px var(--button-shadow-hover);
+}
+
+
+/* @section RSS Feed Styling */
+.rss-feed {
+    padding: 1.5rem;
+    margin: 1.5rem 0 0;
+    border-radius: .5rem;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 4px -1px var(--border-color);
+}
+
+.rss-feed h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-bottom-color);
+}
+
+.rss-feed ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rss-feed li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .5rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.rss-feed li:last-child { border-bottom: none; }
+.rss-feed li a span { text-align: left; font-size: clamp(0.75rem, 2.38vw, 1rem); }
+.rss-feed li > span { text-align: right; font-size: clamp(0.5rem, 2.08vw, 0.875rem); }
+
+/* @section Footer & Links Styling */
+footer {
+    position: relative;
+    text-align: center;
+    margin: 2rem auto 0;
+}
+
+#social-icon {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0.5rem;
+    color: var(--icon-color);
+    transition: transform 0.2s ease;
+}
+
+#social-icon:hover {
+    cursor: pointer;
+    transform: scale(1);
+    color: var(--link-color);
+}
+
+/* @section Theme Switch Button Styling */
+#theme-toggle {
+    border: none;
+    cursor: pointer;
+    background: none;
+    display: block;
+    margin: 1.25rem auto;
+    padding: 0.5rem;
+    font-size: 1.35rem;
+    transition: transform 0.2s ease;
+}
+#theme-icon {
+    color: var(--toggle-thumb-color);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+#theme-toggle:hover #theme-icon {
+    color: var(--link-color);
+    transform: scale(1);
+}
+.credits {
+    font-size: clamp(0.5rem, 1.5vw, 0.625rem);
+}
+.copyrights {
+    font-weight: normal;
+    font-size: clamp(0.675rem, 2.1vw, 0.875rem);
+}
