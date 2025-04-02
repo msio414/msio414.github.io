@@ -1,8 +1,10 @@
 {{- with .Site.Params -}}
 <header itemscope itemtype="https://schema.org/Person">
-    <img itemprop="image" src="{{- "img/avatar.png" | relURL -}}" alt="Avatar of {{- .FirstName -}}" class="avatar" loading="lazy">
+    {{- $avatar := resources.Get "img/avatar.png" -}}
+    <img itemprop="image" src="{{- $avatar.RelPermalink -}}" alt="Avatar of {{- .FirstName -}}" class="avatar" loading="lazy">
     <h1>
-        <img itemprop="logo" src="{{- "img/brand.png" | relURL -}}" alt="{{- .FirstName -}} brand logo" class="logo" loading="lazy">
+        {{- $logo := resources.Get "img/brand.png" -}}
+        <img itemprop="logo" src="{{- $logo.RelPermalink -}}" alt="{{- .FirstName -}} brand logo" class="logo" loading="lazy">
         <span itemprop="name" class="name">{{ .FirstName }} <b>{{ .LastName }}</b></span>
     </h1>
 </header>

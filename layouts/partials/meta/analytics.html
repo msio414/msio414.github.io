@@ -1,11 +1,11 @@
 {{- $nonce := .Scratch.Get "nonce" -}}
 {{- $respectDNT := site.Config.Privacy.GoogleAnalytics.RespectDoNotTrack -}}
 <!-- SOURCE: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/google_analytics.html -->
-{{- with .Site.Params.googleAnalytics.ID }}
+{{- with .Site.Params.analytics.GoogleAnalytics }}
     {{- if strings.HasPrefix (lower .) "ua-" }}
         {{- warnf "Google Analytics 4 (GA4) replaced Google Universal Analytics (UA) effective 1 July 2023.\n" }}
         {{- warnf "See https://support.google.com/analytics/answer/11583528.\n" }}
-        {{- warnf "Create GA4 property & data stream, then replace the Google Analytics ID in the config.toml file.\n" }}
+        {{- warnf "Create GA4 property & data stream, then replace the Google Analytics ID in the config.toml assets.\n" }}
     {{- else }}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}" nonce="{{- $nonce -}}"></script>
         <script nonce="{{- $nonce -}}">
@@ -24,3 +24,9 @@
         </script>
     {{ end }}
 {{- end }}
+
+
+{{- with site.Params.Analytics.GoatCounter -}}
+    <script data-goatcounter="https://{{- . -}}.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+{{- end -}}

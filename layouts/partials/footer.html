@@ -12,9 +12,9 @@
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
         <i id="theme-icon" class="fa-solid fa-toggle-off fa-xl"></i>
     </button>
-    {{ with .Site.Params.Footer.ccName }}
-        <p class="copyrights">&copy; {{- now.Year -}}, {{ . -}}. Some rights reserved.</p>
-    {{ end }}
+    {{- with .Site.Params.Footer }}
+        <p class="copyrights">&copy; {{- now.Year -}}, <a href="mailto:{{- .ccEmail -}}">{{- .ccName }}</a>. Some rights reserved.</p>
+    {{- end }}
     <p xmlns:cc="https://creativecommons.org/ns#" xmlns:dct="https://purl.org/dc/terms/" class="credits">
         <a property="dct:title" rel="cc:attributionURL" href="https://github.com/msio808/uniport-h">Uniport</a> by
         <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://msio.me">MAS</a> |
@@ -22,4 +22,4 @@
         </a> | Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
     </p>
 </footer>
-<script src="{{- "js/toggler.js" | relURL -}}"></script>
+{{ partialCached "meta/js.html" . }}

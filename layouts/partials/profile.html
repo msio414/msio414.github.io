@@ -5,15 +5,16 @@
             <p itemprop="description">{{ . | markdownify }}</p>
         {{- end }}
 
-        {{- if (fileExists "static/resources/resume.pdf") }}
+        {{- $resume := resources.Get "resources/resume.pdf" -}}
+        {{- if $resume -}}
             <div class="resume-container">
-                <a itemprop="url" class="resume-button" href="{{- "resources/resume.pdf" | relURL -}}">
+                <a itemprop="url" class="resume-button" href="{{- $resume.RelPermalink | relURL -}}">
                     See My Resume <i class="fas fa-file-pdf"></i></a>
             </div>
         {{- end }}
 
         {{- with .Email }}
-            <p itemprop="email">Contact me at <a href="mailto:{{ . }}">{{ . }}</a></p>
+            <p itemprop="email">Contact me at <a href="mailto:{{- . -}}">{{ . }}</a></p>
         {{- end }}
     {{ end }}
 </section>

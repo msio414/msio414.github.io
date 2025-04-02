@@ -1,28 +1,24 @@
 <script type="application/ld+json">
   {
-      "@context": "https://schema.org/",
-      "@type": "Person",
-      {{- with .Site.Params -}}
-      "name": "{{ printf "%s %s" .FirstName .LastName -}}",
-      {{- end -}}
-      "url": "{{- printf "%s" (.Site.BaseURL | safeJS) -}}",
-      "image": "{{- printf "img/avatar.png" -}}",
-      {{- with .Site.Params.SiteDescription -}}
-      "description": "{{- printf "%s" ( . | safeJS) -}}",
-      {{ end }}
-      {{ with .Site.Params }}
-      {{- if (and .Jobtitle .Organization) -}}
-      "jobTitle": "{{- printf "%s" (.Jobtitle | safeJS) -}}",
+  "@context": "https://schema.org",
+  "@type": "Person",
+  {{- printf "\"%s\": \"%s\"," "url" .Site.BaseURL | safeJS -}}
+  {{- with .Site.Params -}}
+      {{ printf "\"name\": \"%s %s\", " .FirstName .LastName | safeJS }}
+      {{ printf "\"image\": \"img/avatar.png\", " | safeJS }}
+      {{ printf "\"description\": \"%s\"," .SiteDescription | safeJS }}
+      {{- if (and .Jobtitle .Organization) }}
+          {{- printf "\"jobTitle\": \"%s\"," .JobTitle | safeJS }}
       "worksFor": {
-        "@type": "Organization",
-        "name": "{{ printf "%s" (.Organization | safeJS) }}"
+        {{- printf "\"%s\": \"%s\"," "@type" "Organization" | safeJS -}}
+        {{- printf "\"%s\": \"%s\"" "name" .Organization | safeJS -}}
       },
       {{- end -}}
       {{- if (and .Education .Institution) -}}
-        "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name":  "{{ printf "%s" (.Institution | safeJS) -}}",
-            "degree": "{{ printf "%s" (.Education | safeJS) -}}"
+      "alumniOf": {
+            {{- printf "\"%s\": \"%s\"," "@type" "CollegeOrUniversity" | safeJS -}}
+            {{- printf "\"%s\": \"%s\"," "name" .Institution | safeJS -}}
+            {{- printf "\"%s\": \"%s\"" "degree" .Education | safeJS -}}
         },
       {{- end -}}
       "sameAs": [
@@ -45,6 +41,6 @@
             {{- end -}}
         {{- end -}}
       ]
-      {{ end }}
+  {{- end -}}
   }
 </script>
