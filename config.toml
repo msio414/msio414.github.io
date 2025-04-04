@@ -26,7 +26,7 @@ title = "PORTFOLIO SITE"
     Email = "nbytes808@gmail.com"
 
 [params.rssFeed]
-    Url = "https://msio.substack.com/feed.xml"
+    Url = "https://blog.msio.me/feed.xml"
 
 [params.Socials]
     GitHub = "https://github.com/msio808"
@@ -38,9 +38,11 @@ title = "PORTFOLIO SITE"
 
 [params.Footer]
     ccName = "Muhammed A"
+    ccEmail = nbytes808@gmail.com
 
-[params.googleAnalytics]
-    Id = "G-CL14LX3KFN"
+[params.analytics]
+    GoatCounter = 'G-CL14LX3KFN'
+    GoogleAnaltics = 'msio'
 
 
 
