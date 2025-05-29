@@ -24,6 +24,7 @@ title = "PORTFOLIO SITE"
         'I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018.'
     ]
     Email = "nbytes808@gmail.com"
+    resumePath = "resume.pdf"
 
 [params.rssFeed]
     Url = "https://blog.msio.me/feed.xml"
