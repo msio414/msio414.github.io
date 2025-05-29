@@ -23,7 +23,7 @@ title = "PORTFOLIO SITE"
         'I love solving challenges on platforms like [TryHackMe](https://tryhackme.com/p/msio/), building up my skills, and staying on top of the latest industry trends.',
         'I graduated with a High School diploma from S.O.S Hermann Gmeiner Technical Senior Secondary School in 2018.'
     ]
-    Email = "nbytes808@gmail.com"
+    Email = "senghoreamin@gmail.com"
     resumePath = "resume.pdf"
 
 [params.rssFeed]
@@ -39,11 +39,11 @@ title = "PORTFOLIO SITE"
 
 [params.Footer]
     ccName = "Muhammed A"
-    ccEmail = nbytes808@gmail.com
+    ccEmail = "senghoreamin@gmail.com"
 
 [params.analytics]
     GoatCounter = 'G-CL14LX3KFN'
-    GoogleAnaltics = 'msio'
+    GoogleAnalytics = 'msio'
 
 
 
