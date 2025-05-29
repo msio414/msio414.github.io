@@ -5,10 +5,10 @@
             <p itemprop="description">{{ . | markdownify }}</p>
         {{- end }}
 
-        {{- $resume := resources.Get "resources/resume.pdf" -}}
-        {{- if $resume -}}
+        {{- $resume := resources.Get .resumePath -}}
+        {{- with $resume -}}
             <div class="resume-container">
-                <a itemprop="url" class="resume-button" href="{{- $resume.RelPermalink | relURL -}}">
+                <a itemprop="url" class="resume-button" href="{{- .RelPermalink | relURL -}}">
                     See My Resume <i class="fas fa-file-pdf"></i></a>
             </div>
         {{- end }}
