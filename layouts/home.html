@@ -1,0 +1,28 @@
+{{ define "main" }}
+    {{ with .Site.Data.summary }}
+        <section class="hero" id="home">
+            {{ partial "utilities/hero.html" .bio }}
+        </section>
+        <section class="about" id="about">
+            {{ partial "utilities/about.html" .about }}
+        </section>
+    {{ end }}
+    {{ with .Site.Data.resume }}
+        <section class="resume" id="resume">
+            {{ partial "utilities/resume.html" . }}
+        </section>
+    {{ end }}
+    {{ with .Site.Data.portfolio }}
+        <section class="portfolio" id="portfolio">
+            {{ partial "utilities/portfolio.html" (dict "projects" .projects "skillset" .skillset) }}
+        </section>
+        <section class="services" id="services">
+            {{ partial "utilities/services.html" (dict "services" .services "testimonials" .testimonials) }}
+        </section>
+    {{ end }}
+    {{ with .Site.Data.contact }}
+        <section class="contact" id="contact">
+            {{ partial "utilities/contact.html" . }}
+        </section>
+    {{ end }}
+{{ end }}

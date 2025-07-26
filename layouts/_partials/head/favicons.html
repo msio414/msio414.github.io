@@ -1,0 +1,18 @@
+{{ with .Site.Params.config }}
+    {{ $icon := printf "%s" .favicon | default .logo }}
+    {{ $pwa := partial "functions/get-site-favicons.html" $icon }}
+
+    {{ with $pwa.manifest }}
+        {{ $manifest := resources.FromString "manifest.json" (. | jsonify (dict "prefix" "    " "indent" "    ")) }}
+        {{ $manifest.Publish }}
+        <link rel="manifest" href="{{ $manifest.RelPermalink }}">
+        <meta name="color-scheme" content="light">
+        <meta name="msapplication-TileColor" content="{{ .theme_color }}">
+        <meta name="theme-color" content="{{ .background_color }}">
+    {{ end }}
+
+    {{ range $key, $info := $pwa.favicons }}
+        <link rel="{{ $info.rel }}" type="{{ $info.type }}" sizes="{{ $info.sizes }}" href="{{ $info.url }}">
+    {{ end }}
+
+{{ end }}

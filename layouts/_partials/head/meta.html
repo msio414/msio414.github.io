@@ -1,0 +1,149 @@
+{{ $attrs := partial "functions/get-site-attrs.html" . }}
+
+{{ with $attrs.url }}
+    <link rel="canonical" href="{{ . }}">
+{{ end }}
+
+{{ with $attrs.site_title | plainify }}
+    <meta itemprop="name" content="{{ . }}">
+{{ end }}
+
+{{ with $attrs.author }}
+    <meta name="author" content="{{ . }}">
+{{ end }}
+
+{{ with $attrs.description | plainify | htmlUnescape }}
+    <meta itemprop="description" content="{{ trim . "\n\r\t " }}">
+{{ end }}
+
+{{ with $attrs.keywords }}
+    <meta itemprop="keywords" name="keywords" content="{{ delimit . ", " }}">
+{{ end }}
+
+{{ with $attrs.date_published }}
+    <meta itemprop="datePublished" content="{{ . }}">
+{{ end }}
+
+{{ with $attrs.date_modified }}
+    <meta itemprop="dateModified" content="{{ . }}">
+{{ end }}
+
+{{ with $attrs.url }}
+    <meta itemprop="url" content="{{ . }}">
+{{ end }}
+
+{{ with $attrs.author }}
+    <meta itemprop="publisher" content="{{ . }}">
+{{ end }}
+
+{{ with (replace $attrs.language_code "-" "_") }}
+    <meta itemprop="inLanguage" content="{{ . }}">
+{{ end }}
+
+{{ with .WordCount }}
+    <meta itemprop="wordCount" content="{{ . }}">
+{{ end }}
+
+{{ range $key, $img := $attrs.images }}
+    <meta itemprop="image" content="{{ $img }}">
+{{ end }}
+
+{{ with $attrs.keywords }}
+    <meta itemprop="keywords" content="{{ delimit . `, ` }}">
+{{ end }}
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website">
+{{ with .Site.BaseURL }}
+    <meta property="og:url" content="{{ . }}">
+{{ end }}
+{{ with $attrs.site_title }}
+    <meta property="og:title" content="{{ . }}">
+{{ end }}
+{{ with $attrs.site_title }}
+    <meta property="og:site_name" content="{{ . }}">
+{{ end }}
+{{ with $attrs.description }}
+    <meta property="og:description" content="{{ . }}">
+{{ end }}
+{{ with (replace $attrs.language_code "-" "_") | default `en_US` }}
+    <meta property="og:locale" content="{{ . }}">
+{{ end }}
+{{ with $attrs.fb_admins }}
+    <meta property="fb:admins" content="{{ . }}" />
+{{ end }}
+{{ range $key, $img := $attrs.images }}
+    {{ if ne $key "tc_image" }}
+        <meta property="og:image" content="{{ $img }}">
+    {{ end }}
+{{ end }}
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+{{ with $attrs.url }}
+    <meta name="twitter:url" content="{{ . }}">
+{{ end }}
+
+{{ with $attrs.site_title }}
+    <meta name="twitter:title" content="{{ . }}">
+{{ end }}
+
+{{ with $attrs.twitter_handle }}
+    <meta name="twitter:site" content="@{{ . }}">
+    <meta name="twitter:creator" content="@{{ . }}">
+{{ end }}
+{{ with $attrs.description }}
+    <meta name="twitter:description" content="{{ . }}">
+{{ end }}
+{{ with $attrs.images.tc_image }}
+    <meta name="twitter:image" content="{{ . }}">
+{{ end }}
+
+<!-- Schema JSON + LD Script -->
+
+{{ $person := dict
+        "@context"      "https://schema.org"
+        "@type"         "Person"
+        "name"          $attrs.author
+        "url"           $attrs.url
+        "image"         $attrs.images.avatar
+        "sameAs"        $attrs.socials
+        "jobTitle"      $attrs.job_title
+        "worksFor"      (dict "@type" "Organization" "name" $attrs.company)
+        "description"   $attrs.description
+        "email"         $attrs.email
+        "alumniOf"      (dict "@type" "CollegeOrUniversity" "name" $attrs.institution)
+        "knowsAbout"    $attrs.skills
+}}
+<script type="application/ld+json">
+    {{ ($person | jsonify (dict "prefix" "    " "indent" "    ")) | safeJS }}
+</script>
+
+{{ $website := dict
+        "@context"      "https://schema.org"
+        "@type"         "WebSite"
+        "name"          $attrs.author
+        "url"           $attrs.url
+        "author"        (dict "@type" "Person" "name" $attrs.author)
+        "publisher"     (dict "@type" "Organization" "name" $attrs.author)
+        "description"   $attrs.description
+        "inLanguage"    $attrs.language_code
+}}
+<script type="application/ld+json">
+    {{ ($website | jsonify (dict "prefix" "    " "indent" "    ")) | safeJS }}
+</script>
+
+{{ $webpage := dict
+        "@context"          "https://schema.org"
+        "@type"             "WebPage"
+        "name"              $attrs.site_title
+        "url"               $attrs.url
+        "description"       $attrs.description
+        "dateModified"      $attrs.date_modified
+        "datePublished"     $attrs.date_published
+        "copyrightHolder"   $attrs.copyright_holder
+        "copyrightYear"     $attrs.copyright_year
+}}
+<script type="application/ld+json">
+    {{ ($webpage | jsonify (dict "prefix" "    " "indent" "    ")) | safeJS }}
+</script>

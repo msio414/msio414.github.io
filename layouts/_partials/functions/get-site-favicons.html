@@ -1,0 +1,59 @@
+{{ $favicon := . }}
+{{ $manifest := dict }}
+{{ $faviconMap := dict }}
+{{ $manifestIcons := slice }}
+
+{{ $resizeOptions := slice
+        (dict "size" "180x" "rel" "apple-touch-icon" "sizes" "180x180" "purpose" "any")
+        (dict "size" "16x" "rel" "icon" "type" "image/png" "sizes" "16x16" "purpose" "any")
+        (dict "size" "32x" "rel" "icon" "type" "image/png" "sizes" "32x32" "purpose" "any")
+        (dict "size" "96x" "rel" "icon" "type" "image/png" "sizes" "96x94" "purpose" "any")
+        (dict "size" "48x" "rel" "icon" "type" "image/x-icon" "sizes" "48x48" "purpose" "any")
+        (dict "size" "192x" "rel" "icon" "type" "image/png" "sizes" "192x192" "purpose" "any maskable")
+        (dict "size" "512x" "rel" "icon" "type" "image/png" "sizes" "512x512" "purpose" "any maskable")
+}}
+
+{{ range $resizeOptions }}
+    {{ $size := int (index (split .sizes "x") 0) }}
+    {{ $newName := printf "%s-%s.png" .rel .sizes }}
+    {{ $resized := partial "functions/resolve-image.html" (dict
+            "img" $favicon
+            "width" $size
+            "height" $size
+            "newName" $newName) }}
+    {{ $iconInfo := dict
+            "url"       $resized.url
+            "rel"       .rel
+            "type"      .type
+            "sizes"     .sizes
+            "purpose"   .purpose
+    }}
+    {{ $key := printf "%s-%s" .size .purpose }}
+    {{ $faviconMap = merge $faviconMap (dict $key $iconInfo) }}
+
+    {{ if ne .rel "apple-touch-icon" }}
+        {{ $manifestIcon := dict
+                "src"       $resized.url
+                "sizes"     .sizes
+                "type"      .type
+                "purpose"   .purpose
+        }}
+        {{ $manifestIcons = $manifestIcons | append $manifestIcon }}
+    {{ end }}
+{{ end }}
+
+{{ $manifest = merge $manifest (dict
+        "name"                      site.Title
+        "short_name"                site.Title
+        "description"               site.Params.description
+        "start_url"                 "/"
+        "display"                   "standalone"
+        "scope"                     "/"
+        "orientation"               "portrait"
+        "lang"                      (index (slice site.Language.LanguageCode "-") 0)
+        "dir"                       (site.Language.LanguageDirection | default "ltr")
+        "icons"                     $manifestIcons
+        "theme_color"               "#090909"
+        "background_color"          "#FAF9F6") }}
+
+{{ return dict "favicons" $faviconMap "manifest" $manifest }}

@@ -1,0 +1,58 @@
+{{ $urlMap := dict
+        "xing"              "https://xing.com/"
+        "twitch"            "https://twitch.tv/"
+        "tiktok"            "https://tiktok.com/"
+        "reddit"            "https://reddit.com/"
+        "github"            "https://github.com/"
+        "threads"           "https://threads.net/"
+        "youtube"           "https://youtube.com/"
+        "twitter"           "https://twitter.com/"
+        "facebook"          "https://facebook.com/"
+        "instagram"         "https://instagram.com/"
+        "linkedin"          "https://linkedin.com/in/"
+        "bluesky"           "https://bsky.app/profile/"
+
+        "dev"               "https://dev.to/"
+        "medium"            "https://medium.com/"
+        "gitlab"            "https://gitlab.com/"
+        "codepen"           "https://codepen.io/"
+        "keybase"           "https://keybase.io/"
+        "bitbucket"         "https://bitbucket.com/"
+        "hackerrank"        "https://hackerrank.com/profile/"
+        "stack-overflow"    "https://stackoverflow.com/users/"
+}}
+
+{{ $socialsMap := slice }}
+
+{{ with . }}
+    {{ range $key, $val := . }}
+        {{ $key = lower $key }}
+        {{ if ne $key "others" }}
+            {{ with $val }}
+                {{ $u := urls.Parse . }}
+                {{ $s := $u.Scheme }}
+                {{ $title := title $key }}
+                {{ $host := (index $urlMap $key) }}
+                {{ $icon := printf "fa-brands fa-xl fa-%s" $key }}
+                {{ $url := cond (strings.HasPrefix $s "http") $val (urls.JoinPath $host $val) }}
+                {{ $socialsMap = $socialsMap | append (dict "icon" $icon "url" $url "title" $title) }}
+            {{ end }}
+        {{ else }}
+            {{ range $subKey, $subVal := $val }}
+                {{ with $subVal }}
+                    {{ $subKey = lower $subKey }}
+                    {{ $url := . }}
+                    {{ $title := title $subKey }}
+                    {{ $icon := printf "fa fa-xl fa-%s" $subKey }}
+                    {{ $socialsMap = $socialsMap | append (dict "icon" $icon "url" $url "title" $title) }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ return $socialsMap }}
+{{ else }}
+    {{ return nil }}
+{{ end }}
+
+
+
