@@ -4,7 +4,7 @@
             "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
             "targetPath" "css/main.css"
             "transpiler" "dartsass"
-            "includePaths" ((slice "node_modules/@logstack/eon/dist") | default (slice "themes/muxel/node_modules/@logstack/eon/dist"))
+            "includePaths" (slice "node_modules/@logstack/eon/dist")
     }}
     {{ with . | toCSS $opts }}
         {{ if hugo.IsDevelopment }}

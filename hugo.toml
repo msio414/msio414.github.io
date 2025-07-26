@@ -1,7 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'MSIO'
-theme = 'muxel'
 
 [params]
     description = 'A showcase of my skills & work, and a personal exploration of cybersecurity and tech'
@@ -11,7 +10,6 @@ theme = 'muxel'
     ]
 
     [params.config]
-        theme = 'light'
         logo = 'images/brand/logo-transparent.png'
         favicon = 'images/brand/favicon.png'
 
@@ -58,5 +56,3 @@ enableFingerprinting = true
     [module.hugoVersion]
         extended = false
         min = '0.144.1'
-    [[module.imports]]
-        path = "github.com/logstacklabs/muxel"
