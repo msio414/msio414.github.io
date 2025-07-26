@@ -1,0 +1,60 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'MSIO'
+theme = 'muxel'
+
+[params]
+    description = 'A showcase of my skills & work, and a personal exploration of cybersecurity and tech'
+    keywords = [
+        'Cybersecurity', 'Networking', 'Basic Electronics', 'Coding',
+        'Linux', 'Git', 'Python', 'Basic C Programming', 'HTML, CSS & JS'
+    ]
+
+    [params.config]
+        theme = 'light'
+        logo = 'images/brand/logo-transparent.png'
+        favicon = 'images/brand/favicon.png'
+
+    [params.config.analytics]
+        goatCounter = 'msio'
+        googleAnalytics = 'G-CL14LX3KFN'
+
+    [params.config.seo]
+        fbAdminsId = ''
+        twitterHandle = ''
+        opengraphImage = 'images/brand/logo.png'
+        twitterCardImage = 'images/brand/logo.png'
+
+[menus]
+    [[menus.main]]
+        name = 'About'
+        weight = 11
+    [[menus.main]]
+        name = 'Resume'
+        weight = 14
+    [[menus.main]]
+        name = 'Portfolio'
+        weight = 33
+    [[menus.main]]
+        name = 'Services'
+        weight = 41
+    [[menus.main]]
+        name = 'Contact'
+        weight = 44
+
+[outputs]
+    home = ['HTML', 'RSS']
+
+[minify]
+    minifyOutput = true
+
+enableGitInfo = true
+enableRobotsTXT = true
+enableFingerprinting = true
+
+[taxonomies]
+
+[module]
+    [module.hugoVersion]
+        extended = false
+        min = '0.144.1'

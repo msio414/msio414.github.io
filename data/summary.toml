@@ -1,0 +1,26 @@
+[bio]
+    fullName = 'Muhammed A. Senghore'
+    avatar = 'images/gallery/anime-me2.png'
+    summary = 'Passionate about IT & Programming. Constantly learning and growing in the ever-evolving field of cybersecurity.'
+    taglines = [
+        'A Freelancd Developer',
+        'A Security Enthusiast',
+        'An Ethical Hacker in Training',
+        'An Aspiring Cybersecurity Analyst',
+    ]
+    [[bio.cta]]
+        anchor = '#contact'
+        label = 'Reach Out'
+    [[bio.cta]]
+        anchor = 'docs/CV.pdf'
+        label = 'Download CV'
+        download = true
+
+[about]
+    sectionTitle = 'About Me'
+    tagline = ''
+    avatar = 'images/gallery/anime-me.png'
+    summary = [
+        "I’m Muhammed, & I’m a student living in Istanbul, Turkey. I’m a tech enthusiast with a strong interest in IT and cybersecurity, and a passion for solving problems through programming. I have a good foundation in C & Python Programming, and I’m comfortable working with Linux, Git/GitHub, the HUGO framework, and tools like Microsoft Office and Google Cloud.",
+        "I enjoy learning how things work and I continuously seek out challenges that help me grow through continuous learning and hands-on practice on platforms like [`TryHackMe`](https://tryhackme.com/p/msio/), [`HackTheBox`](https://referral.hackthebox.com/mzED68I), [`boot.dev`](https://boot.dev/u/msio), [`letsdefend.io`](https://app.letsdefend.io/user/msio), and many more."
+    ]

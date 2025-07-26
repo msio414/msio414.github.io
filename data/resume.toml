@@ -1,0 +1,46 @@
+sectionTitle = 'Professional Overview'
+
+[experience]
+    subSectionTitle = 'Work History'
+    [[experience.entry]]
+        role = 'Freelance IT Specialist'
+        duration = '14/11/2024 - Present'
+        companyName = 'Logstack Labs'
+        companyLogo = 'images/resume/logstack.png'
+        summary = 'Designed and developed custom HUGO themes with. These themes are SEO friendly and easy to setup & customize. Gained experience with version control, theming, and basic static site deployment. Managed version control with Git and applied semantic versioning to track updates and improvements clearly.'
+
+[education]
+    subSectionTitle = 'Academic Background'
+    [[education.entry]]
+        title = 'Junior Cybersecurity Analyst Career Path'
+        date = 'Mar. 2025 - Present'
+        schoolLogo = 'images/resume/cisco.png'
+        schoolName = 'Cisco Networking Academy'
+        summary = 'A preparatory course for the entry-level CCST CyberSecurity certification by Cisco Networking Academy. It covers an Introduction To Cybersecurity, Networking Basics, Networking Device Configuration, Endpoint Security, Network Defense, Cyber Threat Management...etc.'
+    [[education.entry]]
+        title = 'High School Diploma'
+        date = 'June 2018'
+        schoolLogo = 'images/resume/sos1.png'
+        schoolName = 'S.O.S Hermann Gmeiner Technical Senior Secondary School'
+        summary = 'I was an active member and the Vice President of the S.O.S Islamic Club. I was also a member of the S.O.S Science & Maths club. I participated in club activities including weekly club meetings, a `Community cleaning services` organized by the Islamic Club. I also represented the school in an Inter-school Quranic Competition.'
+
+[certificates]
+    subSectionTitle = 'Certificates & Achievements'
+    [[certificates.entry]]
+        title = 'CS106A Programming Methodologies'
+        issuer = 'Stanford Code In Place'
+        dateIssued = 'Jun. 2025'
+        validationUrl = 'https://codeinplace.stanford.edu/cip5/certificate/olm9lo'
+        summary = 'A free online course offered by Stanford University. It Covers the fundamentals of computer programming using the widely used Python programming language.'
+    [[certificates.entry]]
+        title = 'CS50x Introduction to Computer Science'
+        issuer = 'HarvardX on EdX'
+        dateIssued = 'Aug. 2024'
+        validationUrl = 'https://courses.edx.org/certificates/c747e993af6c42d9be88823af6a87d18'
+        summary = 'An online programming course offered by HarvardX, an online learning initiative of Harvard University.'
+    [[certificates.entry]]
+        title = 'Linux Basics: The Command Line Interface'
+        issuer = 'IMTx on EdX'
+        dateIssued = 'Feb. 2023'
+        validationUrl = 'https://courses.edx.org/certificates/872b8a8eb26c4fd8b316815e6473447a'
+        summary = 'Covers the fundamentals of the Linux command line interface.'

@@ -1,0 +1,56 @@
+sectionTitle = 'My Portfolio'
+[projects]
+    subSectionTitle = 'Featured Projects'
+    [[projects.entry]]
+        title = 'Muxel Hugo Theme'
+        demoUrl = 'https://msio.me'
+        repoUrl = 'https://github.com/logstacklabs/muxel.git'
+        #screenshot = 'images/screenshot.png'
+        techStack = ['HUGO', 'HTML', 'CSS', 'SCSS', 'JavaScript']
+        summary = 'A collection of simple, lightweight, and responsive Hugo themes. They consist of professional portfolio themes and blogging themes built with HTML, CSS & JavaScript.'
+    [[projects.entry]]
+        title = '2D Bouncing Ball Simulation'
+        demoUrl = ''
+        repoUrl = 'https://github.com/msio414/stanford-cip5-final-project.git'
+        screenshot = 'images/portfolio/2DBouncinigBallSimulation.png'
+        techStack = ['Python', 'TKinter', 'Mathematics', '2D Vector Physics', 'Graphics Programming']
+        summary = 'As part of my Stanford CIP5 final project, I built a 2D physics bouncing ball simulation using Python and the standard _”tkinter”_ library for the graphical interface. The simulation displays balls of various sizes, masses, and colors that move under the influence of gravity.'
+    [[projects.entry]]
+        title = 'Quizbit'
+        demoUrl = 'https://github.com/msio414/quizbit.git'
+        repoUrl = 'https://github.com/msio414/quizbit.git'
+        screenshot = 'https://raw.githubusercontent.com/msio808/quizbit/main/docs/img/screenshot.png'
+        techStack = ['C', 'Valgrind', 'CMake & Make', 'SQLite3', 'OpenSSL & RegEx']
+        summary = 'A a CLI quiz game using the C programming language as part of my CS50x final project. The program uses SQLite3 to store, retrieve, & track player stats and profile info. It also uses RegEx and the SHA256 hashing algorithm to securely validate and encrypt user password details.'
+
+[skillset]
+    subSectionTitle = 'Skills & Expertise'
+    [[skillset.entry]]
+        icon = "code"
+        title = "Programming Languages" # & Scripting"
+        summary = "Comfortable writing and debugging in _Python_ & _C_. I'm also amiliar with shell scripting in _Bash_ and _PowerShell_ for automation and system tasks."
+
+    [[skillset.entry]]
+        icon = 'desktop'
+        title = "Web Development"
+        summary = "Basic understanding of front-end development using _HUGO_, _HTML5_, _CSS3_, _SCSS_, and basic _JavaScript_. Can build and style static websites, UI prototypes & content-driven projects."
+
+    [[skillset.entry]]
+        icon = "terminal"
+        title = "Tools & Technologies"
+        summary = "I'm experienced with using Linux & Windows environments, including CLI terminals. I'm comfortable working with with Git & GitHub, VsCode, WebStorm, & PyCharm, Google & Microsoft Tools, VMware, Kali & Parrot OS, Metasploit, Nmap, Burp Siute, and managing virtualized environments for testing and deployment."
+
+[services]
+    subSectionTitle = 'What I Offer'
+    [[services.entry]]
+        icon = 'desktop'
+        title = 'Web Development'
+        summary = 'Creating responsive, modern websites using static site generators and lightweight front-end tools. Focused on performance, accessibility, and clean UI..'
+    [[services.entry]]
+        icon = 'shield-virus'
+        title = 'Vulnerability Assesment'
+        summary = 'Systematic evaluation of security weaknesses through scanning and analysis tools. Delivering clear, actionable reports to reduce attack surface and strengthen security posture'
+    [[services.entry]]
+        icon = ":telephone_receiver:"
+        title = "Technical Support"
+        summary = "Providing reliable technical assistance and troubleshooting for system, software, and network issues. Ensuring uptime, user confidence, and minimal disruption."

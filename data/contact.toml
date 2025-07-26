@@ -1,0 +1,30 @@
+[forms]
+    sectionTitle = 'Contact Me'
+    sectionTagline = "I'm always interested in discussing opportunities, collaborating on projects, or sharing knowledge with fellow tech enthusiasts. Feel free to reach out!"
+    formSubjects = [
+        "Web Development",
+        "Technical Support",
+        "Project Collaboration",
+        "Other"
+    ]
+    [forms.keys]
+        web3forms = '0846fa5b-59aa-4935-9c16-3aa0a9121f63'
+
+[card]
+    title = "Let's Connect"
+    email = 'senghoreamin@gmail.com'
+    phone = '+90 (535) 044-7281'
+    address = 'Somewhere In, Istanbul'
+
+# When adding social URL's, makesure the icon is available on fontawesome and makesure to set the icon name as the key of the social link as shown below.
+[socials]
+    [socials.accounts]
+        GitHub = 'msio414'
+        BlueSky = 'msio.me'
+        LinkedIn = 'msio'
+        Instagram = 'msio414'
+        hackerrank = 'mrmasio'
+        [socials.accounts.others]
+            blog = 'https://blog.msio.me'
+            Code = 'https://www.boot.dev/u/msio'
+            Terminal = 'https://tryhackme.com/p/msio'
