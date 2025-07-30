@@ -41,7 +41,7 @@ sectionTitle = 'My Portfolio'
         demoUrl = ''
         repoUrl = 'https://github.com/msio414/rescal.git'
         screenshot = 'https://raw.githubusercontent.com/msio414/rescal/main/docs/demo.png'
-        techStack = ['C Programming', 'Valgrind', 'CMake & Make', 'GCC & GDB']
+        techStack = ['C Programming', 'CMake', 'Make', 'GCC', 'GDB', 'Bash Scripting']
         summary = "A simple CLI program built using the C programming language. It's a resistor color code interpreter and it can calculate the color codes of resistors with upto 6 bands including the Multiplier, Tolerance, & PPM band."
 
 [skillset]
