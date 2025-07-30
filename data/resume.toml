@@ -13,7 +13,7 @@ sectionTitle = 'Professional Overview'
     subSectionTitle = 'Academic Background'
     [[education.entry]]
         title = 'Junior Cybersecurity Analyst Career Path'
-        date = 'Mar. 2025 - Present'
+        date = 'May. 2025 - Present'
         schoolLogo = 'images/resume/cisco.png'
         schoolName = 'Cisco Networking Academy'
         summary = 'A preparatory course for the entry-level CCST CyberSecurity certification by Cisco Networking Academy. It covers an Introduction To Cybersecurity, Networking Basics, Networking Device Configuration, Endpoint Security, Network Defense, Cyber Threat Management...etc.'

@@ -5,9 +5,23 @@ sectionTitle = 'My Portfolio'
         title = 'Muxel Hugo Theme'
         demoUrl = 'https://msio.me'
         repoUrl = 'https://github.com/logstacklabs/muxel.git'
-        #screenshot = 'images/screenshot.png'
+        screenshot = 'images/portfolio/screenshot.png'
         techStack = ['HUGO', 'HTML', 'CSS', 'SCSS', 'JavaScript']
         summary = 'A collection of simple, lightweight, and responsive Hugo themes. They consist of professional portfolio themes and blogging themes built with HTML, CSS & JavaScript.'
+    [[projects.entry]]
+        title = 'Eon Color Palette'
+        demoUrl = 'https://logstacklabs.github.io/eon-swatches/'
+        repoUrl = 'https://github.com/logstacklabs/eon.git'
+        screenshot = 'images/portfolio/eon.png'
+        techStack = ['NPM', 'JS', 'CSS', 'SCSS']
+        summary = 'A carefully curated color palette inspired by natural elements and timeless design principles for modern interface designs. It features 28 carefully selected colors organized into 7 semantic groups.'
+    [[projects.entry]]
+        title = 'Uniport-H Hugo Theme'
+        demoUrl = 'https://uniporth-demo.pages.dev/'
+        repoUrl = 'https://github.com/logstacklabs/uniport-h.git'
+        screenshot = 'images/portfolio/uniport.png'
+        techStack = ['HUGO', 'HTML', 'CSS', 'JavaScript']
+        summary = "UniPort is a simple, lightweight, and customizable Hugo portfolio theme. It's a single page layout, responsive, & SEO friendly and supports both dark and light mode."
     [[projects.entry]]
         title = '2D Bouncing Ball Simulation'
         demoUrl = ''
@@ -16,19 +30,34 @@ sectionTitle = 'My Portfolio'
         techStack = ['Python', 'TKinter', 'Mathematics', '2D Vector Physics', 'Graphics Programming']
         summary = 'As part of my Stanford CIP5 final project, I built a 2D physics bouncing ball simulation using Python and the standard _”tkinter”_ library for the graphical interface. The simulation displays balls of various sizes, masses, and colors that move under the influence of gravity.'
     [[projects.entry]]
-        title = 'Quizbit'
-        demoUrl = 'https://github.com/msio414/quizbit.git'
+        title = 'Quizbit (CLI QuizGame)'
+        demoUrl = ''
         repoUrl = 'https://github.com/msio414/quizbit.git'
-        screenshot = 'https://raw.githubusercontent.com/msio808/quizbit/main/docs/img/screenshot.png'
+        screenshot = 'https://raw.githubusercontent.com/msio414/quizbit/main/docs/img/screenshot.png'
         techStack = ['C', 'Valgrind', 'CMake & Make', 'SQLite3', 'OpenSSL & RegEx']
         summary = 'A a CLI quiz game using the C programming language as part of my CS50x final project. The program uses SQLite3 to store, retrieve, & track player stats and profile info. It also uses RegEx and the SHA256 hashing algorithm to securely validate and encrypt user password details.'
+
+    [[projects.entry]]
+        title = 'Resistor Color Code Interpreter'
+        demoUrl = ''
+        repoUrl = 'https://github.com/msio414/rescal.git'
+        screenshot = 'https://raw.githubusercontent.com/msio414/rescal/main/docs/demo.png'
+        techStack = ['C Programming', 'Valgrind', 'CMake & Make', 'GCC', 'Bash']
+        summary = 'A CLI based Resistor Color Code Interpreter implemented using the C programming language.'
+#[[projects.entry]]
+#title = 'Tic Tac Toe'
+#demoUrl = ''
+#repoUrl = 'https://github.com/msio414/ttt-game.git'
+#screenshot = ''
+#techStack = ['C Programming', 'GCC', 'Makefile', 'Win32 API']
+#summary = 'A CLI based _**Tic Tac Toe**_ game implemented using the C programming language. The game supports both single player and multiplayer mode. The game also uses the **MiniMax** decission making algorithm for the single player mode to find the next best move for the computer while the game is ongoing.'
 
 [skillset]
     subSectionTitle = 'Skills & Expertise'
     [[skillset.entry]]
         icon = "code"
         title = "Programming Languages" # & Scripting"
-        summary = "Comfortable writing and debugging in _Python_ & _C_. I'm also amiliar with shell scripting in _Bash_ and _PowerShell_ for automation and system tasks."
+        summary = "I'm comfortable writing and debugging codes in _Python_ & _C_. I'm also familiar with shell scripting in _Bash_ and _PowerShell_ for automation and system tasks."
 
     [[skillset.entry]]
         icon = 'desktop'
@@ -38,7 +67,12 @@ sectionTitle = 'My Portfolio'
     [[skillset.entry]]
         icon = "terminal"
         title = "Tools & Technologies"
-        summary = "I'm experienced with using Linux & Windows environments, including CLI terminals. I'm comfortable working with with Git & GitHub, VsCode, WebStorm, & PyCharm, Google & Microsoft Tools, VMware, Kali & Parrot OS, Metasploit, Nmap, Burp Siute, and managing virtualized environments for testing and deployment."
+        summary = "I'm comfortable with using Linux & Windows environments, including CLI terminals. I'm also comfortable with Git & GitHub, VsCode, WebStorm, & PyCharm, Google & Microsoft." # Tools for testing and deployment."
+
+    [[skillset.entry]]
+    icon = ":shield:"
+    title = "Security Tools"
+    summary = "Basic understanding of VMware, Kali & Parrot OS, and managing virtualized environments and core networking concepts like TCP/IP, firewalls, VPNs, and IDS/IPS." #Metasploit, Nmap, Burp Siute,
 
 [services]
     subSectionTitle = 'What I Offer'
