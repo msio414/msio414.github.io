@@ -7,14 +7,21 @@ sectionTitle = 'My Portfolio'
         repoUrl = 'https://github.com/logstacklabs/muxel.git'
         #screenshot = 'images/screenshot.png'
         techStack = ['HUGO', 'HTML', 'CSS', 'SCSS', 'JavaScript']
-        summary = 'A collection of simple, lightweight, and responsive Hugo themes. They consist of professional portfolio themes and blogging themes built with HTML, CSS & JavaScript.'
+        summary = "A simple yet professional portfolio theme built for HUGO. It is lightweight, responsive, SEO-friendly and easily customizable. It's built with HTML, CSS, SASS & JavaScript."
     [[projects.entry]]
         title = 'EON Color Palette'
         demoUrl = 'https://logstacklabs.github.io/eon-swatches/'
         repoUrl = 'https://github.com/logstacklabs/muxel.git'
-        screenshot = 'https://raw.githubusercontent.com/msio808/quizbit/main/docs/eon.png'
+        screenshot = 'https://raw.githubusercontent.com/logstacklabs/eon/main/docs/eon.png'
         techStack = ['JS', 'CSS', 'SCSS', 'JSON', 'TS']
         summary = 'A carefully curated color palette inspired by natural elements and timeless design principles for modern interface designs. It features 28 carefully selected colors organized into 7 semantic groups.'
+    [[projects.entry]]
+        title = 'Uniport-H Hugo Theme'
+        demoUrl = 'https://uniporth-demo.pages.dev/'
+        repoUrl = 'https://github.com/logstacklabs/uniport-h.git'
+        screenshot = 'images/portfolio/uniport.png'
+        techStack = ['HUGO', 'HTML', 'CSS', 'JavaScript']
+        summary = "A simple, lightweight, and responsive Hugo portfolio theme. The design is partly inspired by [Brian Yu's](https://brianyu.me/) Website, It supports Google analytics, RSS integration and both dark and light mode using the nord color theme."
     [[projects.entry]]
         title = '2D Bouncing Ball Simulation'
         demoUrl = ''
@@ -23,36 +30,41 @@ sectionTitle = 'My Portfolio'
         techStack = ['Python', 'TKinter', 'Mathematics', '2D Vector Physics', 'Graphics Programming']
         summary = 'As part of my Stanford CIP5 final project, I built a 2D physics bouncing ball simulation using Python and the standard _”tkinter”_ library for the graphical interface. The simulation displays balls of various sizes, masses, and colors that move under the influence of gravity.'
     [[projects.entry]]
-        title = 'Uniport-H Hugo Theme'
-        demoUrl = 'https://uniporth-demo.pages.dev/'
-        repoUrl = 'https://github.com/logstacklabs/uniport-h.git'
-        screenshot = 'images/screenshot.png'
-        techStack = ['HUGO', 'HTML', 'CSS', 'JavaScript']
-        summary = "A simple, lightweight, and responsive Hugo portfolio theme. The design is partly inspired by [Brian Yu's](https://brianyu.me/) Website, It supports Google analytics, RSS integration and both dark and light mode using the nord color theme."
-    [[projects.entry]]
         title = 'Quizbit'
-        demoUrl = 'https://github.com/msio414/quizbit.git'
+        demoUrl = ''
         repoUrl = 'https://github.com/msio414/quizbit.git'
-        screenshot = 'https://raw.githubusercontent.com/msio808/quizbit/main/docs/img/screenshot.png'
+        screenshot = 'https://raw.githubusercontent.com/msio414/quizbit/main/docs/img/screenshot.png'
         techStack = ['C', 'Valgrind', 'CMake & Make', 'SQLite3', 'OpenSSL & RegEx']
         summary = 'A a CLI quiz game using the C programming language as part of my CS50x final project. The program uses SQLite3 to store, retrieve, & track player stats and profile info. It also uses RegEx and the SHA256 hashing algorithm to securely validate and encrypt user password details.'
+    [[projects.entry]]
+        title = 'Resistor Colorcode Interpreter'
+        demoUrl = ''
+        repoUrl = 'https://github.com/msio414/rescal.git'
+        screenshot = 'https://raw.githubusercontent.com/msio414/rescal/main/docs/demo.png'
+        techStack = ['C Programming', 'Valgrind', 'CMake & Make', 'GCC & GDB']
+        summary = "A simple CLI program built using the C programming language. It's a resistor color code interpreter and it can calculate the color codes of resistors with upto 6 bands including the Multiplier, Tolerance, & PPM band."
 
 [skillset]
     subSectionTitle = 'Skills & Expertise'
     [[skillset.entry]]
         icon = "code"
         title = "Programming Languages" # & Scripting"
-        summary = "Comfortable writing and debugging in _Python_ & _C_. I'm also amiliar with shell scripting in _Bash_ and _PowerShell_ for automation and system tasks."
+        summary = "I'm comfortable writing and debugging codes in _Python_ & _C_. I'm also amiliar with shell scripting in _Bash_ and _PowerShell_ for automation and system tasks."
 
     [[skillset.entry]]
         icon = 'desktop'
         title = "Web Development"
-        summary = "Basic understanding of front-end development using _HUGO_, _HTML5_, _CSS3_, _SCSS_, and basic _JavaScript_. Can build and style static websites, UI prototypes & content-driven projects."
+        summary = "I have a basic understanding of front-end development using _HTML5_, _CSS3_, _SCSS_, and basic _JavaScript_. I can also build styles static websites with _HUGO_, UI prototypes & content-driven projects."
 
     [[skillset.entry]]
         icon = "terminal"
-        title = "Tools & Technologies"
-        summary = "I'm experienced with using Linux & Windows environments, including CLI terminals. I'm comfortable working with with Git & GitHub, VsCode, WebStorm, & PyCharm, Google & Microsoft Tools, VMware, Kali & Parrot OS, Metasploit, Nmap, Burp Siute, and managing virtualized environments for testing and deployment."
+        title = "Operating Systems & Virtualization"
+        summary = "I'm comfortable with Linux & Windows environments, including CLI usage, Also VMwares for managing virtualized environments for testing and deployment."
+
+    [[skillset.entry]]
+        icon = ":wrench:"
+        title = "Tools & IDEs"
+        summary = "Comfortable with Git & GitHub for version control, and with development tools like VsCode, WebStorm, & PyCharm and productivity tools such as MS Office for documentation and collaboration."
 
 [services]
     subSectionTitle = 'What I Offer'
