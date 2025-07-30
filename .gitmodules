@@ -1,0 +1,3 @@
+[submodule "themes/muxel"]
+	path = themes/muxel
+	url = https://github.com/logstacklabs/muxel.git
