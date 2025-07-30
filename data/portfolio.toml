@@ -9,12 +9,26 @@ sectionTitle = 'My Portfolio'
         techStack = ['HUGO', 'HTML', 'CSS', 'SCSS', 'JavaScript']
         summary = 'A collection of simple, lightweight, and responsive Hugo themes. They consist of professional portfolio themes and blogging themes built with HTML, CSS & JavaScript.'
     [[projects.entry]]
+        title = 'EON Color Palette'
+        demoUrl = 'https://logstacklabs.github.io/eon-swatches/'
+        repoUrl = 'https://github.com/logstacklabs/muxel.git'
+        screenshot = 'https://raw.githubusercontent.com/msio808/quizbit/main/docs/eon.png'
+        techStack = ['JS', 'CSS', 'SCSS', 'JSON', 'TS']
+        summary = 'A carefully curated color palette inspired by natural elements and timeless design principles for modern interface designs. It features 28 carefully selected colors organized into 7 semantic groups.'
+    [[projects.entry]]
         title = '2D Bouncing Ball Simulation'
         demoUrl = ''
         repoUrl = 'https://github.com/msio414/stanford-cip5-final-project.git'
         screenshot = 'images/portfolio/2DBouncinigBallSimulation.png'
         techStack = ['Python', 'TKinter', 'Mathematics', '2D Vector Physics', 'Graphics Programming']
         summary = 'As part of my Stanford CIP5 final project, I built a 2D physics bouncing ball simulation using Python and the standard _”tkinter”_ library for the graphical interface. The simulation displays balls of various sizes, masses, and colors that move under the influence of gravity.'
+    [[projects.entry]]
+        title = 'Uniport-H Hugo Theme'
+        demoUrl = 'https://uniporth-demo.pages.dev/'
+        repoUrl = 'https://github.com/logstacklabs/uniport-h.git'
+        screenshot = 'images/screenshot.png'
+        techStack = ['HUGO', 'HTML', 'CSS', 'JavaScript']
+        summary = "A simple, lightweight, and responsive Hugo portfolio theme. The design is partly inspired by [Brian Yu's](https://brianyu.me/) Website, It supports Google analytics, RSS integration and both dark and light mode using the nord color theme."
     [[projects.entry]]
         title = 'Quizbit'
         demoUrl = 'https://github.com/msio414/quizbit.git'
