@@ -60,4 +60,4 @@ enableFingerprinting = true
 [module]
     [module.hugoVersion]
         extended = false
-        min = '0.144.2'
+        min = '0.144.1'
