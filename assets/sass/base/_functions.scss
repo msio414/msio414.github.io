@@ -1,0 +1,64 @@
+@use 'sass:list';
+@use "sass:math";
+@use 'sass:meta';
+@use 'sass:string';
+
+$units: px, rem, em, vw, vh, dvw, dvh, vmin, vmax, ch, ex, cm, mm, in, pt, pc;
+@function is-valid-unit($unit) {
+    @return list.index($units, $unit) != null;
+}
+@function has-valid-unit($size) {
+    @each $unit in $units {
+        $len: string.length($unit);
+        @if string.length($size) >= $len {
+            $suffix: string.slice($size, -$len);
+            @if string.to-lower-case($suffix) == $unit {
+                @return true;
+            }
+        }
+    }
+    @return false;
+}
+@function remify($value) {
+    @if meta.type-of($value) != number {
+        @error "The parameter passed must be a number. Ex: remify(14px), remify(2)...etc.";
+    }
+
+    @if math.is-unitless($value) {
+        @return $value * 1rem;
+    }
+
+    $unit: math.unit($value);
+    $supported-units: px, in, cm, mm, pt, pc, em, rem;
+    @if (list.index($supported-units, $unit) == null) {
+        @error "🚫 Cannot convert `#{$value}` to rem. Supported units: #{supported-units} and Unitless values are allowed.";
+    }
+
+    @if $unit == "rem" {
+        @return $value;
+    }
+
+    $numeric-value: $value / ($value * 0 + 1);
+    @if $unit == "em" {
+        @warn "⚠️ em-to-rem conversion assumes 1em = 1rem (context-independent)";
+        @return $numeric-value * 1rem;
+    }
+
+    $px-per-in: 96px;
+    $px-per-cm: math.div($px-per-in, 2.54);
+    $px-per-mm: math.div($px-per-cm, 10);
+    $px-per-pt: math.div($px-per-in, 72);
+    $px-per-pc: math.div($px-per-in, 6);
+
+    $px-value: if($unit == "px", $numeric-value * 1px,
+            if($unit == "in", $numeric-value * $px-per-in,
+                    if($unit == "cm", $numeric-value * $px-per-cm,
+                            if($unit == "mm", $numeric-value * $px-per-mm,
+                                    if($unit == "pt", $numeric-value * $px-per-pt,
+                                            if($unit == "pc", $numeric-value * $px-per-pc,
+                                                    $value))))));
+
+    @if (list.index((px, in, cm, mm, pt, pc), $unit) != null) {
+        @return math.div($px-value, 16px) * 1rem;
+    }
+}

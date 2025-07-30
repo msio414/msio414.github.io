@@ -1,0 +1,100 @@
+{{ $edu := .education }}
+{{ $job := .experience }}
+{{ $certs := .certificates }}
+
+<div class="container">
+    <h2 class="section-title">{{ .sectionTitle | default "Professional Overview" }}</h2>
+    <div class="resume-tabs">
+        {{ with $job.subSectionTitle }}
+            <button class="tab-btn active" data-tab="experience">{{ . }}</button>
+        {{ end }}
+        {{ with $edu.subSectionTitle }}
+            <button class="tab-btn" data-tab="education">{{ . }}</button>
+        {{ end }}
+        {{ with $certs.subSectionTitle }}
+            <button class="tab-btn" data-tab="certifications">{{ . }}</button>
+        {{ end }}
+    </div>
+
+    <div class="tab-content active" id="experience-content">
+        <div class="timeline">
+            {{ range $job.entry }}
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        {{ $imgAlt := title .companyName }}
+                        <div class="timeline-logo">
+                            {{ with .companyLogo }}
+                                {{ $img := partial "functions/resolve-image.html" (dict
+                                        "img" . "width" 48 "height" 48) }}
+                                <img src="{{ $img.url }}" width="{{ $img.width }}" height="{{ $img.height }}" alt="{{ $imgAlt }}">
+                            {{ else }}
+                                <svg fill="#4d4153" width="800px" height="800px" viewBox="0 0 24 24" id="work" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path id="primary" d="M20,6H17V4a2,2,0,0,0-2-2H9A2,2,0,0,0,7,4V6H4A2,2,0,0,0,2,8V20a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V8A2,2,0,0,0,20,6ZM9,4h6V6H9Z" style="fill: #4d4153;"></path><path id="secondary" d="M21.64,6.86A2,2,0,0,0,20,6H4a2,2,0,0,0-1.64.86,1,1,0,0,0-.1,1L4,12a5,5,0,0,0,4.6,3h6.72A5,5,0,0,0,20,12l1.78-4.15A1,1,0,0,0,21.64,6.86Z" style="fill: #4a5759;"></path><rect id="primary-2" data-name="primary" x="10" y="12" width="4" height="4" rx="1" style="fill: #faf9f6;"></rect></svg>
+                            {{ end }}
+                        </div>
+                        <div class="timeline-info">
+                            <h3>{{ title .role }}</h3>
+                            <h4>{{ title .companyName }}</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-summary">{{ .summary }}</div>
+                    <div class="timeline-date"><span>{{ title .duration }}</span></div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="tab-content" id="education-content">
+        <div class="timeline">
+            {{ range $edu.entry }}
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        {{ $imgAlt := title .schoolName }}
+                        <div class="timeline-logo">
+                            {{ with .schoolLogo }}
+                                {{ $img := partial "functions/resolve-image.html" (dict
+                                        "img" . "width" 48 "height" 48) }}
+                                <img src="{{ $img.url }}" width="{{ $img.width }}" height="{{ $img.height }}" alt="{{ $imgAlt }}">
+                            {{ else }}
+                                <svg fill="#4d4153" width="800px" height="800px" viewBox="0 -5 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <title>graduate</title>
+                                    <path d="M32.639 17.561c0 0-4.592-4.682-10.92-4.682-6.183 0-12.295 4.682-12.295 4.682l-3.433-1.433v4.204c0.541 0.184 0.937 0.682 0.937 1.285 0 0.609-0.404 1.108-0.953 1.288l1.015 2.831h-2.996l1.024-2.855c-0.492-0.209-0.836-0.695-0.836-1.264 0-0.557 0.334-1.031 0.811-1.247v-4.659l-4.993-2.082 21.969-9.861 20.156 9.985-9.486 3.808zM21.469 15.251c6.366 0 9.486 3.37 9.486 3.37v6.99c0 0-3.245 2.621-9.985 2.621s-8.987-2.621-8.987-2.621v-6.99c0 0 3.12-3.37 9.486-3.37zM21.344 26.734c4.412 0 7.989-0.895 7.989-1.997s-3.577-1.997-7.989-1.997-7.988 0.895-7.988 1.997 3.576 1.997 7.988 1.997z"></path>
+                                </svg>
+                            {{ end }}
+                        </div>
+                        <div class="timeline-info">
+                            <h3>{{ title .title }}</h3>
+                            <h4>{{ title .schoolName }}</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-summary">{{ .summary }}</div>
+                    <div class="timeline-date"><span>{{ .date }}</span></div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="tab-content" id="certifications-content">
+        <div class="timeline">
+            {{ range $certs.entry }}
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-logo">
+                            <svg fill="#4d4153" width="800px" height="800px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>certificate-solid-badged</title>
+                                <path d="M27.46,17.23a6.36,6.36,0,0,0-4.4,11l-1.94,2.37.9,3.61,3.66-4.46a6.26,6.26,0,0,0,3.55,0l3.66,4.46.9-3.61-1.94-2.37a6.36,6.36,0,0,0-4.4-11Zm0,10.68a4.31,4.31,0,1,1,4.37-4.31A4.35,4.35,0,0,1,27.46,27.91Z" class="clr-i-solid--badged clr-i-solid-path-1--badged"></path><path d="M30,13.5A7.5,7.5,0,0,1,22.5,6H4A2,2,0,0,0,2,8V28a2,2,0,0,0,2,2H19l.57-.7.93-1.14A8.34,8.34,0,0,1,34,18.37v-6A7.46,7.46,0,0,1,30,13.5ZM17,24.6H7V23H17Zm1-7H7V16H18Zm6-4H7V12H24Z" class="clr-i-solid--badged clr-i-solid-path-2--badged"></path><circle cx="30" cy="6" r="5" class="clr-i-solid--badged clr-i-solid-path-3--badged clr-i-badge"></circle>
+                                <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+                            </svg>
+                        </div>
+                        <div class="timeline-info">
+                            {{ $url := .validationUrl | default "#" }}
+                            <h3><a href="{{ $url }}" rel="noreferrer noopener" target="_blank">{{ title .title }}</a></h3>
+                            <h4>{{ title .issuer }}</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-summary">{{ .summary }}</div>
+                    <div class="timeline-date"><span>{{ title .dateIssued }}</span></div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+{{ $proj := .projects }}
+{{ $skillset := .skillset }}
+
+<div class="container">
+    <h2 class="section-title">{{ .sectionTitle | default "My Portfolio" }}</h2>
+    <div class="portfolio-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        {{ with $proj.subSectionTitle }}
+            <button class="filter-btn" data-filter="projects">{{ . }}</button>
+        {{ end }}
+        {{ with $skillset.subSectionTitle }}
+            <button class="filter-btn" data-filter="skills">{{ . }}</button>
+        {{ end }}
+    </div>
+
+    <div class="portfolio-grid">
+        {{ range first 6 $proj.entry }}
+            <div class="portfolio-item" data-category="projects">
+                {{ $title := title .title }}
+                <div class="portfolio-img">
+                    {{ with .screenshot }}
+                        {{ $img := partial "functions/resolve-image.html" (dict
+                                "img" . "width" 400 "height" 200) }}
+                        <img src="{{ $img.url }}" width="{{ $img.width }}" height="{{ $img.height }}" alt="{{ $title }}" title="{{ $title }}">
+                    {{ else }}
+                        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="200" fill="#2a9d8f" opacity="0.2"/>
+                            <rect x="50" y="30" width="300" height="140" rx="10" fill="#264653"/>
+                            <circle cx="100" cy="100" r="30" fill="#e76f51"/>
+                            <rect x="150" y="70" width="150" height="20" rx="10" fill="#f8f9fa"/>
+                            <rect x="150" y="100" width="180" height="15" rx="7" fill="#f8f9fa" opacity="0.7"/>
+                            <rect x="150" y="125" width="120" height="15" rx="7" fill="#f8f9fa" opacity="0.5"/>
+                        </svg>
+                    {{ end }}
+                </div>
+                <div class="portfolio-content">
+                    <h3>{{ title .title | markdownify }}</h3>
+                    <p>{{ .summary | markdownify }}</p>
+                    <div class="tech">
+                        {{ range .techStack }}
+                            <span>{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    <div class="portfolio-links">
+                        {{ with .repoUrl }}
+                            <a href="{{ . }}" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-lg fa-github"></i> GitHub</a>
+                        {{ end }}
+                        {{ with .demoUrl }}
+                            <a href="{{ . }}" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-lg fa-external-link-alt"></i> Demo</a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+
+    <div class="skills-grid">
+        {{ range first 6 $skillset.entry }}
+            <div class="skill-card" data-category="skills">
+                <h3 class="skill-heading">
+                    {{ if (and (hasPrefix .icon ":") (hasSuffix .icon ":")) }}
+                        {{ $icon := .icon | default "bookmark" }}
+                        <span role="img" aria-label="{{ .title }} icon">{{ transform.Emojify $icon }}</span>
+                    {{ else }}
+                        <span class="fa-solid fa-{{ .icon }}" role="img" aria-label="{{ .title }} icon"></span>
+                    {{ end }}
+                    <span class="skill-name">{{ title .title | markdownify }}</span>
+                </h3>
+                <p class="skill-summary">{{ .summary | markdownify }}</p>
+            </div>
+        {{ end }}
+    </div>
+</div>

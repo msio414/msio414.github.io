@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{{- $lang := site.Language.LanguageCode | default `en_US` }}
+{{- $dir := site.Language.LanguageDirection | default `ltr` }}
+<html lang="{{ $lang }}" dir="{{ $dir }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+        {{ $name := .Site.Data.summary.bio.fullName }}
+        {{ $sub := index .Site.Data.summary.bio.taglines 0 }}
+        <title>{{ printf "%s | %s" $name ($sub | default .Site.Title) }}</title>
+
+        {{ partial "head.html" . }}
+    </head>
+    <body>
+        <header>
+            {{ partial "header.html" . }}
+        </header>
+        <main>
+            {{ with .Site.Data.summary }}
+                <section class="hero" id="home">
+                    {{ partial "utilities/hero.html" .bio }}
+                </section>
+                <section class="about" id="about">
+                    {{ partial "utilities/about.html" .about }}
+                </section>
+            {{ end }}
+            {{ with .Site.Data.resume }}
+                <section class="resume" id="resume">
+                    {{ partial "utilities/resume.html" . }}
+                </section>
+            {{ end }}
+            {{ with .Site.Data.portfolio }}
+                <section class="portfolio" id="portfolio">
+                    {{ partial "utilities/portfolio.html" (dict "projects" .projects "skillset" .skillset) }}
+                </section>
+                <section class="services" id="services">
+                    {{ partial "utilities/services.html" (dict "services" .services "testimonials" .testimonials) }}
+                </section>
+            {{ end }}
+            {{ with .Site.Data.contact }}
+                <section class="contact" id="contact">
+                    {{ partial "utilities/contact.html" . }}
+                </section>
+            {{ end }}
+        </main>
+        <footer>
+            {{ partial "footer.html" . }}
+        </footer>
+        {{ partialCached "head/js.html" . }}
+    </body>
+</html>
